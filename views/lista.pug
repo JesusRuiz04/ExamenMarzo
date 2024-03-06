@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= title
+  each personaje in personajes
+    p
+      a(href=`/mongodb/${personaje._id}`)= personaje.name

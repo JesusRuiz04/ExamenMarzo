@@ -1,0 +1,21 @@
+extends layout
+   
+block content
+    #container
+        each personaje in personajes
+            .card(style='width: 13rem')
+                img.card-img-top(src=personaje.image alt='...')
+                .card-body
+                    p
+                        strong #
+                        = personaje.id
+                    p
+                        strong Name: 
+                        = personaje.name
+                    p
+                        strong Genero: 
+                        = personaje.gender
+                    p
+                        strong Fecha: 
+                        = new Date(personaje.created).toLocaleDateString('es-ES')
+                    button.btn.btn-primary(style='background-color: yellow; border-color: yellow;') Eliminar de BD
